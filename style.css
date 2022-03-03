@@ -1,0 +1,80 @@
+/* #86626E #DBAFC1 #E7C8DD #E2E4F6 #DEFFFC */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100vw;
+  height: 12vh;
+  background-color: #e2e4f6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #503a41;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 1rem;
+}
+#formtodo {
+  display: flex;
+  justify-content: center;
+}
+
+#formtodo #addtodo {
+  border: 0;
+  height: 2rem;
+  width: 10rem;
+  background-color: #e7c8dd;
+  border-radius: 2px;
+  margin: 1rem;
+  text-align: center;
+}
+#formtodo #addtodo::placeholder {
+  color: black;
+}
+#formtodo #submit {
+  border: 0;
+  height: 2rem;
+  width: 4rem;
+  background-color: #e7c8dd;
+  margin: 1rem;
+  border-radius: 2px;
+}
+.taskSection {
+  height: 5rem;
+  width: 20rem;
+  background-color: #defffc;
+  position: relative;
+  margin: 1rem;
+  display: flex;
+}
+
+li.taskSection {
+  display: inline-block;
+}
+li.taskSection p {
+  margin: 1rem;
+}
+
+.taskSection .x {
+  position: absolute;
+  bottom: 0;
+  right: 0.16rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: rgb(182, 31, 31);
+}
+
+.taskSection .check {
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  color: rgb(19, 107, 19);
+}

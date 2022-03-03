@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do App</title>
+    <script
+      src="https://kit.fontawesome.com/200484ca2d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>To do App</h1>
+      </div>
+      <nav>
+        <ul>
+          <li id="reset">Reset tasks</li>
+          <li id="completed">Completed tasks</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form id="formtodo">
+        <input id="addtodo" type="text" placeholder="Add task to do" />
+        <input id="submit" type="submit" />
+      </form>
+      <div>
+        <ul id="todolist"></ul>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
