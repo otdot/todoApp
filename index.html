@@ -19,7 +19,7 @@
       <nav>
         <ul>
           <li id="reset">Reset tasks</li>
-          <li id="completed">Completed tasks</li>
+          <li id="completed"><a href="#completedList">Completed tasks</a></li>
         </ul>
       </nav>
     </header>
@@ -28,14 +28,20 @@
         <input id="addtodo" type="text" placeholder="Add task to do" />
         <input id="submit" type="submit" />
       </form>
-      <div>
-        <h1>Todo's</h1>
-        <ul id="todolist"></ul>
+      <div class="sections">
+        <div>
+          <p>Todo's</p>
+        </div>
       </div>
-      <div>
-        <h1>Completed</h1>
-        <ul id="completedList"></ul>
+      <ul id="todolist"></ul>
+      <div class="line"></div>
+      <div class="sections">
+        <div>
+          <p>Completed</p>
+        </div>
       </div>
+      <ul id="completedList"></ul>
+      <div class="line"></div>
     </main>
     <script src="app.js"></script>
   </body>

@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   width: 100vw;
   height: 12vh;
@@ -20,6 +24,39 @@ header nav li {
   display: inline-block;
   padding: 1rem;
 }
+
+nav li a {
+  text-decoration: none;
+  color: #503a41;
+}
+
+.sections {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.sections div {
+  margin: 0.5rem 1rem;
+  width: 12rem;
+  height: 2rem;
+  background-color: #e7c8dd;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sections div p {
+  font-size: 1.1rem;
+}
+
+.line {
+  background-color: #86626e;
+  height: 0.15rem;
+}
+
 #formtodo {
   display: flex;
   justify-content: center;

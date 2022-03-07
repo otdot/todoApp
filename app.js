@@ -3,6 +3,12 @@ const todolist = document.querySelector("#todolist");
 const reset = document.querySelector("#reset");
 const completedList = document.querySelector("#completedList");
 
+const updateListenXs = () => {
+  return (xS = document
+    .querySelectorAll(".x")
+    .forEach((task) => task.addEventListener("click", deleteTask)));
+};
+
 const addTodo = (e) => {
   e.preventDefault();
   const input = document.querySelector("#addtodo").value;
@@ -12,9 +18,8 @@ const addTodo = (e) => {
       `<li class="taskSection"> <p> ${input} </p> <i class="x fa-solid fa-xmark"></i> <i class="check fa-solid fa-check"></i> </li>`
     );
   }
-  xS = document.querySelectorAll(".x");
   checkMarks = document.querySelectorAll(".check");
-  xS.forEach((task) => task.addEventListener("click", deleteTask));
+  updateListenXs();
   checkMarks.forEach((check) => check.addEventListener("click", completeTask));
   document.querySelector("#addtodo").value = "";
 };
@@ -28,6 +33,8 @@ const completeTask = (e) => {
     "beforeend",
     `<li class="taskSection"> <p> ${e.currentTarget.parentNode.children[0].textContent} </p> <i class="x fa-solid fa-xmark"></i> </li>`
   );
+  //update xS's here too to make deleteTask work
+  updateListenXs();
   e.currentTarget.parentNode.remove();
 };
 
