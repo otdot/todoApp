@@ -33,7 +33,6 @@ const completeTask = (e) => {
     "beforeend",
     `<li class="taskSection"> <p> ${e.currentTarget.parentNode.children[0].textContent} </p> <i class="x fa-solid fa-xmark"></i> </li>`
   );
-  //update xS's here too to make deleteTask work
   updateListenXs();
   e.currentTarget.parentNode.remove();
 };
