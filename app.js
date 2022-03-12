@@ -22,9 +22,7 @@ const loadTodos = () => {
   console.log(keys);
   for (i in keys) {
     if (keys[i].includes("t")) {
-      console.log(keys[i]);
       let todoIndex = Number.parseInt(keys[i].slice(1));
-      console.log(todoIndex);
       todolist.insertAdjacentHTML(
         "afterbegin",
         `<li class="taskSection" data-done="false" data-index=${todoIndex}> <p> ${localStorage.getItem(
@@ -33,7 +31,6 @@ const loadTodos = () => {
       );
       if (todoIndex > todoID) todoID = todoIndex + 1;
     } else if (keys[i].includes("c")) {
-      console.log(keys[i]);
       let completedIndex = Number.parseInt(keys[i].slice(1));
       completedList.insertAdjacentHTML(
         "afterbegin",
@@ -44,21 +41,13 @@ const loadTodos = () => {
       if (completedIndex > completedID) completedID = completedIndex + 1;
     }
   }
-  console.log(
-    "todoID: " + todoID,
-    typeof todoID,
-    "completedID: " + completedID,
-    typeof completedID
-  );
   updateListenXs();
 };
 
 const addTodo = (e) => {
   e.preventDefault();
-  console.log(keys);
   const input = document.querySelector("#addtodo").value;
   localStorage.setItem(`t${todoID}`, input);
-  console.log(localStorage.getItem(`t${todoID}`));
   if (input.trim() !== "") {
     todolist.insertAdjacentHTML(
       "afterbegin",
@@ -71,7 +60,6 @@ const addTodo = (e) => {
 };
 
 const deleteTask = (e) => {
-  console.log(keys);
   if (e.currentTarget.parentNode.dataset.done === "false") {
     console.log(e.currentTarget.parentNode.dataset.index);
     localStorage.removeItem(`t${e.currentTarget.parentNode.dataset.index}`);
@@ -82,7 +70,6 @@ const deleteTask = (e) => {
 };
 
 const completeTask = (e) => {
-  console.log(keys);
   localStorage.setItem(
     `c${completedID}`,
     e.currentTarget.parentNode.children[0].textContent
@@ -93,7 +80,6 @@ const completeTask = (e) => {
   );
   updateListenXs();
   completedID++;
-  console.log(e.currentTarget.parentNode.dataset.done);
   e.currentTarget.parentNode.remove();
   localStorage.removeItem(`t${e.currentTarget.parentNode.dataset.index}`);
 };
