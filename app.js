@@ -45,14 +45,20 @@ const loadTodos = () => {
 };
 
 const addTodo = (e) => {
+  const forbiddenChars = `!"#€%&/()=><?¿≠}{[]}`;
   e.preventDefault();
   const input = document.querySelector("#addtodo").value;
-  localStorage.setItem(`t${todoID}`, input);
-  if (input.trim() !== "") {
+  if (
+    input.trim() !== "" &&
+    input.split("").every((char) => !forbiddenChars.includes(char))
+  ) {
+    localStorage.setItem(`t${todoID}`, input);
     todolist.insertAdjacentHTML(
       "afterbegin",
       `<li class="taskSection" data-done="false" data-index=${todoID} > <p> ${input} </p> <i class="x fa-solid fa-xmark"></i> <i class="check fa-solid fa-check"></i> </li>`
     );
+  } else {
+    alert("Input cannot be empty or contain special characters");
   }
   updateListenXs();
   document.querySelector("#addtodo").value = "";
